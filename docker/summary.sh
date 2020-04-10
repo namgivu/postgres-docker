@@ -4,5 +4,5 @@ source "$SH/.env"
 
 echo "
 ** sample usage **
-docker exec -it $CONTAINER_NAME psql -U $POSTGRES_USER -c 'select version() -t'
+docker exec -it $CONTAINER_NAME psql -U $POSTGRES_USER -c 'select version()' -t
 "
