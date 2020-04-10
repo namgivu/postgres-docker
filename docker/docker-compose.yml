@@ -1,0 +1,16 @@
+version: '3.7'  # all docker-compose version https://docs.docker.com/compose/compose-file/
+
+services:
+  postgres:
+    image: ${IMAGE_NAME}  # postgres image with postgis ready
+    ports:
+      - ${EXPOSED_PORT}:5432
+    container_name: ${CONTAINER_NAME}
+    volumes:
+      - v_postgres:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  v_postgres:
+    name: v_postgres__${CONTAINER_NAME}
+    driver: local

@@ -1,2 +1,15 @@
-# postgres-auth-start
-Log in postgres using user+pass or using peer login with host/ip+OS-user
+# docker images for postgres
+postgres     ref. https://hub.docker.com/r/_/postgres
+with postgis ref. https://hub.docker.com/r/mdillon/postgis
+```bash
+docker pull         postgis:10;
+docker pull         postgis:11;
+docker pull mdillon/postgis:10;
+docker pull mdillon/postgis:11;
+```
+
+
+# postgres from docker image with default login mode
+```bash
+: /path/to/this/project
+ENV='postgis:10'; cp -f "./config_vault/$ENV.env" './docker/.env' && ./docker/down.sh && ./docker/up.sh
