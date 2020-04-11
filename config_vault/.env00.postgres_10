@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-    IMAGE_NAME=mdillon/postgis:10
-      STACK_ID=postgis_10
-  EXPOSED_PORT=20410
+    IMAGE_NAME=postgres:10
+      STACK_ID=postgres_10
+  EXPOSED_PORT=20412
  POSTGRES_USER=postgres
 
 CONTAINER_NAME=namgivu_postgres_auth_start__${STACK_ID}
