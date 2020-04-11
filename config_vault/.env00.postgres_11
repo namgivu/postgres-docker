@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
     IMAGE_NAME=postgres:11
       STACK_ID=postgres_11
-  EXPOSED_PORT=20413
+  EXPOSED_PORT=20411
 
      POSTGRES_USER=postgres
  POSTGRES_PASSWORD=postgres
