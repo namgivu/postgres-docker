@@ -6,4 +6,4 @@
      POSTGRES_USER=postgres
  POSTGRES_PASSWORD=postgres
 
-CONTAINER_NAME=namgivu_postgres_auth_start__${STACK_ID}
+CONTAINER_NAME=nn_postgres__${STACK_ID}

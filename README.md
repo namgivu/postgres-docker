@@ -14,9 +14,9 @@ docker pull  mdillon/postgis:11;
 # postgres from docker image with default login mode
 ```bash
 : /path/to/this/project
-export STACK_ID='postgis_10'; ./docker/down.sh && ./docker/up.sh
-export STACK_ID='postgis_11'; ./docker/down.sh && ./docker/up.sh
+export STACK_ID='postgis_10'; ./docker/down.sh && ./docker/up.sh;
+export STACK_ID='postgis_11'; ./docker/down.sh && ./docker/up.sh;    
 
-export STACK_ID='postgres_10'; ./docker/down.sh && ./docker/up.sh
-export STACK_ID='postgres_11'; ./docker/down.sh && ./docker/up.sh
-export STACK_ID='postgres_12'; ./docker/down.sh && ./docker/up.sh
+export STACK_ID='postgres_10'; ./docker/down.sh && ./docker/up.sh;
+export STACK_ID='postgres_11'; ./docker/down.sh && ./docker/up.sh;
+export STACK_ID='postgres_12'; ./docker/down.sh && ./docker/up.sh;
