@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 SH=`cd $(dirname $BASH_SOURCE) && pwd`  # get SH=executed script's path, containing folder, cd & pwd to get container path
 
-if [[ ! -f "$SH/.env" ]]; then echo "File not found .env at $SH - please clone one from *.env in `$SH/../config_vault` "; exit 1; fi
-source "$SH/.env"
+source "$SH/.config.sh"
 
 # run the container
-cd $SH  # must run at this script home folder to load .env
-    docker-compose  -f "$SH/docker-compose.yml"      up   -d                         --force-recreate              --remove-orphans
-    #               #custom docker-compose location       #daemon run as background  #recreate if previously run   #no warning for the previous if any
-    #                                                                                                              #TODO what are orphans?
+cd $SH  # must run at this script home folder to load STACK_ID=namgivu_postgres10_auth
+    docker-compose  -f "$SH/docker-compose.yml"    -p $STACK_ID                          up  -d                  --force-recreate             --remove-orphans
+    #               #custom docker-compose         #project-name aka docker stack name       #run as background  #recreate if previously run  #no warning for orphans if any
+    #               #ref. http://bit.ly/2sKfLDz    #this allow multiple stacks created
+    #                                              #we need -p param to define docker stack name - we use separate stack to run each atlas instance for each gc staff
 
     # print summary if success
     if [[ $? == 0 ]]; then source "$SH/summary.sh"; fi

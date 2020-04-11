@@ -9,8 +9,15 @@ services:
     volumes:
       - v_postgres:/var/lib/postgresql/data
     restart: unless-stopped
+    networks:
+      - n_postgres
+
+networks:
+  n_postgres:
+    driver: bridge
+    name: docker_network__${STACK_ID}  # forced name and no auto-prepended
 
 volumes:
   v_postgres:
-    name: v_postgres__${CONTAINER_NAME}
+    name: docker_volume__${STACK_ID}
     driver: local

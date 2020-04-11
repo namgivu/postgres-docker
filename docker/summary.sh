@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 SH=`cd $(dirname $BASH_SOURCE) && pwd`  # get SH=executed script's path, containing folder, cd & pwd to get container path
-source "$SH/.env"
+
+source "$SH/.config.sh"
 
 echo "
 ** sample usage **
