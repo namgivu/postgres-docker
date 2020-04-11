@@ -11,6 +11,7 @@ cd $SH  # must run at this script home folder to load STACK_ID=namgivu_postgres1
     #                                              #we need -p param to define docker stack name - we use separate stack to run each atlas instance for each gc staff
 
     # print summary if success
+    echo
     if [[ $? == 0 ]]; then source "$SH/summary.sh"; fi
 
 cd - 1>/dev/null
