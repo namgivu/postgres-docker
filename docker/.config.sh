@@ -4,7 +4,7 @@ cAH=`cd $cSH/.. && pwd`
 
 # create .env from .env00.$STACK_ID
 if [[ -z $STACK_ID ]]; then echo 'System variable $STACK_ID not defined'; exit 1; fi
-    create_from_f="$cAH/config_vault/.env00.$STACK_ID"; if [[ ! -f $create_from_f ]]; then echo "File .env00 for :$STACK_ID not found in $cAH/config_vault/"; exit 1; fi
+    create_from_f="$cAH/config_vault/.env00.$STACK_ID"; if [[ ! -f $create_from_f ]]; then echo -e "File .env00 for :$STACK_ID not found \n in $cAH/config_vault/\n at $create_from_f"; exit 1; fi
           env00_f="$cSH/.env00"  # xxx_f aka xxx_file
             env_f="$cSH/.env"
 
