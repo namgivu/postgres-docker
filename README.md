@@ -2,8 +2,8 @@
 postgres     ref. https://hub.docker.com/r/_/postgres
 with postgis ref. https://hub.docker.com/r/mdillon/postgis
 ```bash
-docker pull          postgis:10;
-docker pull          postgis:11;
+docker pull          postgres:10;
+docker pull          postgres:11;
 docker pull  mdillon/postgis:10;
 docker pull  mdillon/postgis:11;
 ```
