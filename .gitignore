@@ -1,2 +1,4 @@
-docker/.env
 .idea/
+
+docker/.env
+docker/.env00
