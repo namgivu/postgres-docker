@@ -7,5 +7,5 @@ cd $SH  # must run at this script home folder to load .env
     echo 'Dropping container...'
         docker stop $CONTAINER_NAME
         docker rm   $CONTAINER_NAME
-    echo 'Dropping container... DONE'
+    echo 'Dropping container... DONE'; echo
 cd - 1>/dev/null
