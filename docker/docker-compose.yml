@@ -20,7 +20,7 @@ services:
 networks:
   n_postgres:
     driver: bridge
-    name: docker_network__${STACK_ID}  # forced name and no auto-prepended
+    name: ${NETWORK_NAME}  # forced name and no auto-prepended
 
 volumes:
   v_postgres:
