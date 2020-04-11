@@ -2,6 +2,8 @@
     IMAGE_NAME=postgres:10
       STACK_ID=postgres_10
   EXPOSED_PORT=20412
- POSTGRES_USER=postgres
+
+     POSTGRES_USER=postgres
+ POSTGRES_PASSWORD=postgres
 
 CONTAINER_NAME=namgivu_postgres_auth_start__${STACK_ID}
