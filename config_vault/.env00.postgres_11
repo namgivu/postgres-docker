@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+    IMAGE_NAME=postgres:11
+      STACK_ID=postgres_11
+  EXPOSED_PORT=20413
+
+     POSTGRES_USER=postgres
+ POSTGRES_PASSWORD=postgres
+
+CONTAINER_NAME=namgivu_postgres_auth_start__${STACK_ID}

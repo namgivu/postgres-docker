@@ -5,7 +5,7 @@ source "$SH/.config.sh"
 
 echo "--> AFTERMATH"
     echo
-    docker ps | grep -E "$CONTAINER_NAME|$EXPOSED_PORT" --color=always
+    docker ps | grep -E "$CONTAINER_NAME|$EXPOSED_PORT|$IMAGE_NAME" --color=always
 
     echo
     docker exec -it $CONTAINER_NAME psql -U $POSTGRES_USER -c 'select version()' -t  | grep -iE "PostgreSQL [^(]+" --color=always
