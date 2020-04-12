@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
     IMAGE_NAME=mdillon/postgis:10
       STACK_ID=postgis_10
-  EXPOSED_PORT=20400
- POSTGRES_USER=postgres
+  EXPOSED_PORT=${EXPOSED_PORT:-20410}
 
-CONTAINER_NAME=nn_postgres__${STACK_ID}
+     POSTGRES_USER=${POSTGRES_USER:-postgres}
+ POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+
+CONTAINER_NAME=${CONTAINER_NAME:-nn_postgres__${STACK_ID}}
   NETWORK_NAME=${NETWORK_NAME:-docker_network__${STACK_ID}}

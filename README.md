@@ -11,7 +11,7 @@ docker pull  mdillon/postgis:11;
 ```
 
 
-# postgres from docker image 
+# postgres available at multiple versions
 ```bash
 : /path/to/this/project
 export STACK_ID='postgis_10'; ./docker/down.sh && ./docker/up.sh;
@@ -22,10 +22,26 @@ export STACK_ID='postgres_11'; ./docker/down.sh && ./docker/up.sh;
 export STACK_ID='postgres_12'; ./docker/down.sh && ./docker/up.sh;
 ```
 
+
 # postgres from docker image with custom network name
 ```bash
 : /path/to/this/project
 export NETWORK_NAME='docker_network__shared_10vs11'; 
     export STACK_ID='postgres_11'; ./docker/down.sh && ./docker/up.sh; 
     export STACK_ID='postgres_10'; ./docker/down.sh && ./docker/up.sh;
+```
+
+
+# postgres from docker image with custom auth user+pass
+Wire it up 
+```bash
+: /path/to/this/project
+export POSTGRES_USER='my_pg_user'; export POSTGRES_PASSWORD='my_pg_pass';  
+    export STACK_ID='postgres_10'; ./docker/down.sh && ./docker/up.sh;
+```
+
+Try to connect with the custom user+pass
+```bash
+PGPASSWORD=my_pg_pass psql -U my_pg_user -p 20410 -c 'select 1' -t
+#          #pass              #user
 ```
