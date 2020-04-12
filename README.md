@@ -32,11 +32,11 @@ export NETWORK_NAME='docker_network__shared_10vs11';
 ```
 
 
-# postgres from docker image with custom auth user+pass
+# postgres from docker image with custom auth user+pass+db
 Wire it up 
 ```bash
 : /path/to/this/project
-export POSTGRES_USER='my_pg_user'; export POSTGRES_PASSWORD='my_pg_pass';  
+export POSTGRES_USER='my_pg_user'; export POSTGRES_PASSWORD='my_pg_pass'; export POSTGRES_DB='my_pg_db';  
     export STACK_ID='postgres_10'; ./docker/down.sh && ./docker/up.sh;
 ```
 
