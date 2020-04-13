@@ -22,5 +22,4 @@ cat<<EOF
 
     # run via localhost psql if available
     PGPASSWORD=$POSTGRES_PASSWORD psql -U $POSTGRES_USER -h localhost -p $EXPOSED_PORT $POSTGRES_DB -c 'select version()' -t
-    #pass                              #user             #host        #port            #db          #query
 EOF
