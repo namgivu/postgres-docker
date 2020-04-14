@@ -11,3 +11,5 @@ ref. https://hub.docker.com/_/postgres
 `01b` custom user+db for psql as uuu/ddd
       note db         :postgres always created beside our custom db
            os user db :postgres always created beside our custom user
+
+`02`  psql without user+pass
