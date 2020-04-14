@@ -12,4 +12,5 @@ ref. https://hub.docker.com/_/postgres
       note db         :postgres always created beside our custom db
            os user db :postgres always created beside our custom user
 
-`02`  psql without user+pass
+`02`  psql without user+pass within the container
+`03`  outer host required password
