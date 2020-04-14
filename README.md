@@ -14,3 +14,5 @@ ref. https://hub.docker.com/_/postgres
 
 `02a` psql without user+pass within the container
 `02b` outer host required password
+
+`03`  outer host no-password effort with -e POSTGRES_HOST_AUTH_METHOD='trust'
