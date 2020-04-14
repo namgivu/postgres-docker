@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+    IMAGE_NAME=postgres:12
+      STACK_ID=postgres_12
+  EXPOSED_PORT=${EXPOSED_PORT:-20412}
+
+     POSTGRES_USER=${POSTGRES_USER:-postgres}
+ POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+       POSTGRES_DB=${POSTGRES_DB:-postgres}
+
+CONTAINER_NAME=${CONTAINER_NAME:-nn_postgres__${STACK_ID}}
+  NETWORK_NAME=${NETWORK_NAME:-docker_network__${STACK_ID}}
