@@ -8,7 +8,7 @@ docker run  -e POSTGRES_PASSWORD=some-pass \
             -e POSTGRES_USER=uuu \
             --name ccc  -d  postgres:11
 
-echo "Booting ..."; sleep 1  # give some time for the container to finish booting
+echo "Booting ..."; sleep 2  # give some time for the container to finish booting
 
 echo; docker exec -u postgres  ccc  bash -c "psql -U uuu  postgres  -c \" select '01' \" "
 #                 #os user                        #user   #db
