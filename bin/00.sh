@@ -8,5 +8,5 @@ docker run  -e POSTGRES_PASSWORD=some-pass  --name ccc       -d                 
 #           #set password                   #container name  #daemon ie background  #image name
 
 echo "Booting ..."; sleep 2  # give some time for the container to finish booting
-echo
-docker exec ccc  bash -c "psql -Upostgres -c 'select 1' "
+
+echo; docker exec ccc  bash -c "psql -Upostgres -c 'select 1' "
