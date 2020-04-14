@@ -8,3 +8,5 @@ ref. https://hub.docker.com/_/postgres
       we aim at running with no user and no password
       
 `01`  custom user    for psql as uuu
+`01b` custom user+db for psql as uuu/ddd
+      note that db :postgres always created beside our custom db

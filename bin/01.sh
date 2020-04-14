@@ -10,5 +10,6 @@ docker run  -e POSTGRES_PASSWORD=some-pass \
 
 echo "Booting ..."; sleep 2  # give some time for the container to finish booting
 
+echo; docker exec -u postgres  ccc  bash -c "psql -U uuu            -c \" select '00' \" "
 echo; docker exec -u postgres  ccc  bash -c "psql -U uuu  postgres  -c \" select '01' \" "
 #                 #os user                        #user   #db
