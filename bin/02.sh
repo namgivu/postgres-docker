@@ -20,6 +20,6 @@ echo; docker exec -u uuu   ccc bash -c "psql            ddd -c \" select 1 \" " 
 note="
 we create os user :uuu so that to get the psql to pass
 "
-echo; docker exec ccc useradd uuu
-echo; docker exec -u uuu   ccc bash -c "psql ddd            -c \" select 1 \" "  #NOTE will fail with error > unable to find user uuu: no matching entries in passwd file
+docker exec ccc useradd uuu
+echo; docker exec -u uuu   ccc bash -c "psql ddd            -c \" select 1 \" "
 #                 #os user                   #db name only
