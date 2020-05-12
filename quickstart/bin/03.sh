@@ -5,11 +5,13 @@ docker rm   -f ccc 1>/dev/null 2>&1
 
 echo "We make outer user $USER available in the postgres container"
 
+PORT=20414
+
 docker run  -e POSTGRES_PASSWORD='some-pass' \
             -e POSTGRES_USER=$USER \
             -e POSTGRES_DB='ddd' \
             -e POSTGRES_HOST_AUTH_METHOD='trust' \
-            --name ccc  -p 20414:5432  -d  postgres:11
+            --name ccc  -p $PORT:5432  -d  postgres:11
 
 echo "Booting ..."; sleep 2  # give some time for the container to finish booting
 
@@ -18,10 +20,11 @@ docker exec ccc useradd $USER
 echo; docker exec -u $USER   ccc bash -c "psql ddd -c \" select 1 \" "
 #                 #os user                     #db
 
-echo; psql -p 20414 ddd -c 'select 1'
+echo; psql                  -p $PORT ddd -c 'select 1'  # should pass
+echo; psql -U "$USER-other" -p $PORT ddd -c 'select 1'  # should fail
 
 
-# wire up another_machine :am, to prove that can psql connect as long as having same user with :ddd
+# wire up another_machine :am, to prove that can psql connect as long as having same user $USER
 docker stop -f 'another_machine' 1>/dev/null 2>&1
 docker rm   -f 'another_machine' 1>/dev/null 2>&1
     echo; docker run --net host                                   --name 'another_machine'  -e POSTGRES_PASSWORD='am-pass'  -d postgres
